@@ -1,0 +1,5 @@
+bibliographypath: bibliography.bib
+mdxdir: site/src/content/docs/
+pdfdir: site/public/
+siteurl: courses/
+texdir: notes/
