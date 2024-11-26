@@ -20,6 +20,10 @@
 \titleformat{\subsection}
 {\sc}{\thesubsection}{1em}{\large}
 
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}
+
 % Figure related
 \usepackage{tikz}
 \usetikzlibrary{calc}
@@ -63,8 +67,14 @@
 \newcommand{\defined}[1]{\textit{#1}}
 
 % Operators
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\let\boundary\relax
+\DeclareMathOperator{\boundary}{\partial\!}
 \let\diff\relax
 \DeclareMathOperator{\diff}{\, d\!}
-\DeclareMathOperator*{\argmin}{arg\,min}
-\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\exterior}{Ext}
+\DeclareMathOperator{\homeomorphic}{\approx}
+\DeclareMathOperator{\interior}{Int}
+\DeclareMathOperator{\identity}{Id}
 

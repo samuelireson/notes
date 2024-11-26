@@ -5,7 +5,290 @@ import Aside from '@components/Aside.astro';
 import { Tabs, TabItem, LinkButton } from '@astrojs/starlight/components';
 
 <div style='display: flex; justify-content: space-around;'>
-	<LinkButton target="_blank" href="/courses/notes/introduction-to-topological-manifolds/new-spaces-from-old.pdf" variant="secondary" icon="document" >Download</LinkButton>
-	<LinkButton target="_blank" href="/courses/notes/introduction-to-topological-manifolds/master.pdf" variant="primary" icon="open-book" >Download</LinkButton>
+	<LinkButton target="_blank" href="/notes/tex/introduction-to-topological-manifolds/new-spaces-from-old.pdf" variant="secondary" icon="document" >Download</LinkButton>
+	<LinkButton target="_blank" href="/notes/tex/introduction-to-topological-manifolds/master.pdf" variant="primary" icon="open-book" >Download</LinkButton>
 </div>
+## Subspaces
+<Aside type='definition' title='Definition' name='Subspace topology'>
+	Let $ X $ be a topological space and $ S \subseteq X $ any subset. The <em> subset topology </em> on $ S $ is the collection,
+$$
+\begin{align*}
+		\tau_{S} = \{ U \subseteq S : U = S \cap V \text{ for some } V \in \tau_{X} \}
+\end{align*}
+$$
+</Aside>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Verify that the subset topology is indeed a topology on $ S $.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Suppose $ S $ is a subspace of $ X $. Prove that $ B \subseteq S $ is closed in $ S $ if and only if it is equal to the intersection of $ S $ with some closed subset of $ X $.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Aside type='result' title='Proposition' name=''>
+	Suppose $ S $ is a subspace of the topological space $ X $,
+	
+		- If $ U \subseteq S \subseteq X $, $ U $ is open in $ S $, and $ S $ is open in $ X $, then $ U $ is open in $ X $.
+		- If $ U \subseteq S \subseteq X $, $ U $ is closed in $ S $, and $ S $ is closed in $ X $, then $ U $ is closed in $ X $.
+		- If $ U $ is a subset of $ S $ that is either open or closed in $ X $ then it is also respectively open or closed in $ S $.
+	
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Suppose that $ U \subseteq S \subseteq X $.
+	
+		- Show that the closure of $ U $ in $ S $ is equal to $ \overline{U}\cap S $.
+		- Show that the interior of $ U $ in $ S $ contains $ \interior{U} \cap S $, but the oppositve inclusion is not necessarily true.
+	
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Aside type='result' title='Theorem' name='Characteristic property of the subspace topology'>
+	Suppose $ X $ is a topological space and $ S \subseteq X $ is a subspace. For any topological space $ Y $, a map $ f:Y \to S $ is continuous if any only if the composition $ \iota_{S}\circ f:Y \to X $ is continuous.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Corollary' name=''>
+	The inclusion map $ \iota_{S}:S \hookrightarrow X $ is continuous.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Corollary' name=''>
+	Let $ f:X \to Y $ be a continuous map between topological spaces. Then,
+	
+		- The restriction of $ f $ to any subspace $ S \subseteq X $ is continuous.
+		- If $ T $ is a subspace of $ Y $ that contains $ f ( X ) $, then $ f:X \to T $ is continuous.
+		- If $ Y $ is a subspace of $ Z $, then $ f:X \to Z $ is continuous.
+	
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Proposition' name='Other subspace properties'>
+	Let $ S $ be a subspace of $ X $.
+	
+		- If $ R \subseteq S $ is a subspace of $ S $, then $ R $ is a subspace of $ X $.
+		- If $ \mathcal{B} $ is a basis for the topology of $ X $, then
+$$
+\begin{align*}
+			      \mathcal{B}_{S} = \{ B \cap S: B \in \mathcal{B} \}
+\end{align*}
+$$
+		      is a basis for the topology of $ S $.
+		- If $ ( p_{i} ) $ is a sequence of points in $ S $, and $ p \in S $, then $ p_{i} \to p $ in $ S $ if and only if $ p_{i}\to p $ in $ X $.
+		- Every subspace of a Hausdorff space is Hausdorff.
+		- Every subspace of a first countable space is first countable.
+		- Every subspace of a second countable space is second countable.
+	
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+### Topological embeddings
+<Aside type='definition' title='Definition' name='Topological embedding'>
+	An injective continuous map that is a homeomorphism onto its image is called a <em> topological embedding </em>.
+</Aside>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Show that the inclusion map $ \iota_{S}:S \hookrightarrow X $ is topological embedding.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Aside type='result' title='Proposition' name=''>
+	A continuous inhective map that is either open or closed is a topological embedding.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Proposition' name=''>
+	A surjective topological embedding is a homeomorphism
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='definition' title='Definition' name=''>
+	If $ U \subseteq \mathbb{R}^{n} $ is an open subset and $ f:U \to \mathbb{R}^{k} $ is any continuous map, the <em> graph of $ f $ </em> is the subset $ \Gamma ( f )\subseteq \mathbb{R}^{n+k} $ defined by,
+$$
+\begin{align*}
+		\Gamma ( f ) = \{ ( x,y ) = ( x_{1},...,x_{n},y_{1},...,y_{k} ): x \in U \land y = f ( x ) \}
+\end{align*}
+$$
+</Aside>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Show that $ \Gamma ( f ) $ is a manifold.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Aside type='result' title='Lemma' name='Gluing lemma'>
+	Let $ X $ and $ Y $ be topological spaces, and let $ \{ A_{i} \} $ be either an arbitary open cover of $ X $ or a finite closed cover of $ X $. Suppose that $ f_{i}:A_{i}\to Y $ are continuous maps which coincide on intersections: $ f_{i}|_{A_{i}\cap A_{j}} = f_{j}|_{A_{i}\cap A_{j}} $. Then, there exists a unique continuous map $ f:X \to Y $ such that $ f|_{A_{i}} = f_{i} $.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Theorem' name='Uniqueness of the subspace topology'>
+	Suppose $ S $ is a subset of a topological space $ X $. The subspace topology on $ S $ is the unique topology satisfying the characteristic property.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+## Product spaces
+<Aside type='definition' title='Definition' name='Product topology'>
+	Let $ X_{1},...,X_{n} $ be topological spaces. The <em> product topology </em> is defined on their Cartesian product $ X_{1}\times \cdots \times X_{n} $ as the topology generated by the basis,
+$$
+\begin{align*}
+		\mathcal{B} = \{ U_{1}\times \cdots \times U_{n}: U_{i} \in \tau_{X_{i}} \text{ for } i = 1,...,n \}
+\end{align*}
+$$
+</Aside>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Prove that $ \mathcal{B} $ is a basis for a topology.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Tabs>
+	<TabItem label='Problem'>
+	Show that the product topology on $ \mathbb{R}^{n} = \underbrace{\mathbb{R}\times \cdots \times \mathbb{R}}_{n} $ is the same as the metric topology induced by the Euclidean distance function.
+	</TabItem>
+	<TabItem label='Solution'>
+		TODO
+	</TabItem>
+</Tabs>
+
+<Aside type='result' title='Theorem' name='Characteristic property of the product topology'>
+	Suppose that $ X_{1}\times \cdots \times X_{n} $ is a product space. For any topological space $ Y $, a map $ f:Y \to X_{1}\times \cdot \times X_{n} $ is continuous if and only if each of its component functions $ f_{i} = \pi_{i}\circ f $ is continuous where $ \pi_{i}:X_{1}\times \cdots \times X_{n}\to X_{i} $ is the canonical projection.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Corollary' name=''>
+	Each canonical projection $ \pi_{i} $ is continuous.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Theorem' name='Uniqueness of the product topology'>
+	The product topology on $ X_{1}\times \cdots \times X_{n} $ is the unique topology satisfying the characteristic property.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Proposition' name='Other product space properties'>
+	Let $ X_{1},...,X_{n} $ be topological spaces.
+	
+		- The product topology is associative.
+		- For any $ i \in \{ 1,...,n \} $ and any points $ x_{j}\in X_{j} $, $ j \neq i $, the map,
+$$
+\begin{align*}
+			      f & :X_{i} \to X_{1}\times \cdots \times X_{n}             \\
+			        & :x \mapsto ( x_{1},...,x_{i-1}, x, x_{i+1},...,x_{n} )
+\end{align*}
+$$
+		      is a topological embedding of $ X_{i} $ into the product space.
+		- Each canonical projection $ \pi_{i} $ is open.
+		- If for each $ i $, $ \mathcal{B}_{i} $ is a basis for the topology of $ X_{i} $, then the set
+$$
+\begin{align*}
+			      \{ B_{1}\times \cdots \times B_{n}: B_{i}\in \mathcal{B}_{i} \}
+\end{align*}
+$$
+		      is a basis for the product topology on $ X_{1}\times \cdots \times X_{n} $.
+		- If $ S_{i} $ is a subspace of $ X_{i} $ for $ i=1,...,n $, then the product topology and the subspace topology on $ S_{1}\times \cdots \times S_{n} \subseteq X_{1}\times \cdots \times X_{n} $ are equal.
+		- If each $ X_{i} $ is Hausdorff, so is $ X_{1}\times \cdots \times X_{n} $.
+		- If each $ X_{i} $ is first countable, so is $ X_{1}\times \cdots \times X_{n} $.
+		- If each $ X_{i} $ is second countable, so is $ X_{1}\times \cdots \times X_{n} $.
+	
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='definition' title='Definition' name='Product map'>
+	If $ f_{i}:X_{i}\to Y_{i} $ are maps for $ i=1,...,k $, their <em> product map </em> is defined as,
+$$
+\begin{align*}
+		f_{1}\times \cdots \times f_{k} & : X_{1}\times \cdots \times X_{k}\to Y_{1}\times \cdots Y_{k}         \\
+		                                & : ( x_{1},..., x_{k} ) \mapsto ( f_{1}( x_{1} ),..., f_{k}( x_{k} ) )
+\end{align*}
+$$
+</Aside>
+
+<Aside type='result' title='Proposition' name=''>
+	A product of continuous maps is continuous, and a product of homeomorphisms is a homeomorphism.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+<Aside type='result' title='Proposition' name=''>
+	If $ M_{1},...,M_{k} $ are manifolds of dimension $ n_{1},...,n_{k} $ respectively, then product space $ M_{1}\times \cdots \times M_{k} $ is a manifold of dimension $ n_{1}+ \cdots +n_{k} $.
+	<details>
+<summary>Proof</summary>
+		TODO
+	</details>
+</Aside>
+
+## Disjoint union spaces
+## Quotient spaces
+## Adjunction spaces
+## Topological groups and group actions
+## Problems
 

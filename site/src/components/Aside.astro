@@ -22,7 +22,7 @@ let { type, title, name } = Astro.props;
 	<p class="starlight-aside__title" aria-hidden="true">
 		<Icon name={icons[type]} />
 		{title}
-		{name}
+		{name != "" ? "⇾ " + name : ""}
 	</p>
 	<div class="starlight-aside__content">
 		<slot />
