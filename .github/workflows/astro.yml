@@ -60,7 +60,7 @@ jobs:
       - name: Install TeX
         run: |
           sudo apt update
-          sudo apt install -y texlive-full latexmk
+          sudo apt install -y texlive-latex-recommended latexmk
 
       - name: create dummy figures dir
         run: mkdir -p tex/introduction-to-topological-manifolds/figures
@@ -69,7 +69,7 @@ jobs:
         run: |
           go install github.com/samuelireson/notes-cli@latest
           notes-cli convert tex/introduction-to-topological-manifolds
-          notes-cli compile tex/introduction-to-topological-manifolds
+          latexmk --version
 
       - name: Build with Astro
         run: |
